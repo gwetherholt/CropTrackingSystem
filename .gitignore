@@ -1,0 +1,13 @@
+# build artefacts
+build/
+*.exe
+*.vcxproj*
+/stage/
+
+# visualisations & outputs
+data/output/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+*.user
