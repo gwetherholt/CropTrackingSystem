@@ -1,0 +1,102 @@
+[
+  {
+    "frame_id": 0,
+    "timestamp": "2025-06-19T12:00:00Z",
+    "tracked_objects": [
+      {
+        "height": 60.0,
+        "id": 0,
+        "width": 50.0,
+        "x": 100.0,
+        "y": 100.0
+      },
+      {
+        "height": 50.0,
+        "id": 1,
+        "width": 40.0,
+        "x": 300.0,
+        "y": 200.0
+      }
+    ]
+  },
+  {
+    "frame_id": 1,
+    "timestamp": "2025-06-19T12:00:01Z",
+    "tracked_objects": [
+      {
+        "height": 60.0,
+        "id": 0,
+        "width": 50.0,
+        "x": 110.0,
+        "y": 105.0
+      },
+      {
+        "height": 50.0,
+        "id": 1,
+        "width": 40.0,
+        "x": 292.0,
+        "y": 204.0
+      }
+    ]
+  },
+  {
+    "frame_id": 2,
+    "timestamp": "2025-06-19T12:00:02Z",
+    "tracked_objects": [
+      {
+        "height": 60.0,
+        "id": 0,
+        "width": 50.0,
+        "x": 120.0,
+        "y": 110.0
+      },
+      {
+        "height": 50.0,
+        "id": 1,
+        "width": 40.0,
+        "x": 284.0,
+        "y": 208.0
+      }
+    ]
+  },
+  {
+    "frame_id": 3,
+    "timestamp": "2025-06-19T12:00:03Z",
+    "tracked_objects": [
+      {
+        "height": 60.0,
+        "id": 0,
+        "width": 50.0,
+        "x": 130.0,
+        "y": 115.0
+      },
+      {
+        "height": 50.0,
+        "id": 1,
+        "width": 40.0,
+        "x": 276.0,
+        "y": 212.0
+      }
+    ]
+  },
+  {
+    "frame_id": 4,
+    "timestamp": "2025-06-19T12:00:04Z",
+    "tracked_objects": [
+      {
+        "height": 60.0,
+        "id": 0,
+        "width": 50.0,
+        "x": 140.0,
+        "y": 120.0
+      },
+      {
+        "height": 50.0,
+        "id": 1,
+        "width": 40.0,
+        "x": 268.0,
+        "y": 216.0
+      }
+    ]
+  }
+]

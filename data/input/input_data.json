@@ -1,0 +1,16 @@
+[
+  {
+    "frame_id": 0,
+    "timestamp": "2025-06-19T00:00:00Z",
+    "detections": [
+      { "x": 0.5, "y": 0.5, "width": 0.1, "height": 0.1 }
+    ]
+  },
+  {
+    "frame_id": 1,
+    "timestamp": "2025-06-19T00:00:01Z",
+    "detections": [
+      { "x": 0.52, "y": 0.51, "width": 0.1, "height": 0.1 }
+    ]
+  }
+]

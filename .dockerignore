@@ -1,0 +1,5 @@
+# ignore local build artefacts & outputs
+build/
+visualization/
+*.png
+.git

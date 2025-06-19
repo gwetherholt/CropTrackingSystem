@@ -1,0 +1,3 @@
+C:/Users/Georgia/Desktop/RedBarnTest/build/CMakeFiles/crop_tracking.dir
+C:/Users/Georgia/Desktop/RedBarnTest/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Georgia/Desktop/RedBarnTest/build/CMakeFiles/ZERO_CHECK.dir

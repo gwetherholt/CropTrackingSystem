@@ -1,0 +1,10 @@
+^C:\USERS\GEORGIA\DESKTOP\REDBARNTEST\BUILD\CMAKEFILES\291D3C6C57F07771D659D1961208C7E9\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Georgia/Desktop/RedBarnTest -BC:/Users/Georgia/Desktop/RedBarnTest/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Georgia/Desktop/RedBarnTest/build/crop_tracking.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
