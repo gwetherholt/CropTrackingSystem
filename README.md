@@ -1,7 +1,7 @@
 # Crop Tracking – C++ Reference Implementation  
 *(Agricultural-Robotics Take-Home Challenge – June 2025)*
 
-![demo summary](data/output/simple_3_frames/visualization/summary.png)
+![demo summary](data/output/long_200_frames/visualization/summary.png)
 
 ---
 
