@@ -2,6 +2,9 @@
 #include <opencv2/opencv.hpp>
 #include <cmath>
 #include <algorithm>
+#include <iostream>
+#include <opencv2/highgui/highgui.hpp>
+#include <filesystem>
 
 /* ------------ helpers --------------------------------------------------- */
 static inline float norm(float v, int dim) { return (v > 1.f) ? v / dim : v; }
@@ -65,7 +68,7 @@ std::vector<TrackedObject> Tracker::update(const std::vector<Detection>& dets)
 cv::Mat Tracker::visualize(const std::vector<TrackedObject>& objs,
                            int frame_no, int W, int H) const
 {
-    cv::Mat img(H, W, CV_8UC3, cv::Scalar::all(255));
+    cv::Mat img(H, W, CV_8UC3, cv::Scalar(19, 69, 139)); // Brown background (like soil)
 
     for (const auto& o : objs)
     {
@@ -75,21 +78,24 @@ cv::Mat Tracker::visualize(const std::vector<TrackedObject>& objs,
         float ww = px ? o.width  : o.width  * W;
         float hh = px ? o.height : o.height * H;
 
-        cv::Rect r(int(cx - ww/2), int(cy - hh/2), int(ww), int(hh));
-        cv::rectangle(img, r, cv::Scalar(0,255,0), 2);
-        cv::putText(img, "ID:"+std::to_string(o.id),
+        // Draw the tracking rectangle
+        cv::Rect r(int(cx - ww / 2), int(cy - hh / 2), int(ww), int(hh));
+        cv::rectangle(img, r, cv::Scalar(0, 255, 0), 2); // Green rectangle
+        cv::putText(img, "ID:" + std::to_string(o.id),
                     {r.x, r.y - 5}, cv::FONT_HERSHEY_SIMPLEX,
-                    0.5, cv::Scalar(0,0,255), 1);
+                    0.5, cv::Scalar(0, 0, 255), 1); // Red text for ID
 
+        // Draw motion lines
         for (size_t i = 1; i < o.history.size(); ++i)
-            cv::line(img, o.history[i-1], o.history[i], cv::Scalar(255,0,0), 1);
+            cv::line(img, o.history[i-1], o.history[i], cv::Scalar(255, 0, 0), 1); // Blue motion lines
     }
 
+    // Add frame number label
     std::string label = (frame_no >= 0)
                         ? "Frame " + std::to_string(frame_no)
                         : "Summary";
-    cv::putText(img, label, {10,30}, cv::FONT_HERSHEY_SIMPLEX,
-                1.0, cv::Scalar(0,0,0), 2);
+    cv::putText(img, label, {10, 30}, cv::FONT_HERSHEY_SIMPLEX,
+                1.0, cv::Scalar(0, 0, 0), 2); // Black label for frame number
 
     return img;
 }
