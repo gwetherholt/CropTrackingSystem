@@ -32,6 +32,10 @@ int main(int argc, char* argv[])
     std::vector<TrackedObject> last_tracked;
     json out_json = json::array();
 
+    // Define image width and height (modify as needed or load from metadata)
+    int W = 640;  // Width of the image
+    int H = 480;  // Height of the image
+
     for (const auto& f : frames)
     {
         int frame_id = f["frame_id"];
@@ -41,29 +45,38 @@ int main(int argc, char* argv[])
         for (const auto& d : f["detections"])
             dets.push_back({ d["x"], d["y"], d["width"], d["height"] });
 
-        auto tracked = tracker.update(dets);
+        // Pass W and H to the update method
+        auto tracked = tracker.update(dets, W, H);
         last_tracked = tracked;                       // keep for summary
 
-        cv::Mat img = tracker.visualize(tracked, frame_id);
+        // Visualize the current frame
+        cv::Mat img = tracker.visualize(tracked, frame_id, W, H);
         cv::imwrite(vis_dir + "/frame_" + std::to_string(frame_id) + ".png", img);
 
+        // Create JSON for output
         json fout;
         fout["frame_id"] = frame_id;
         fout["timestamp"] = ts;
         for (const auto& t : tracked)
-            fout["tracked_objects"].push_back({
-                {"id", t.id}, {"x", t.x}, {"y", t.y},
-                {"width", t.width}, {"height", t.height}
-            });
+        {
+            json obj;
+            obj["id"] = t.id;
+            obj["x"] = t.x;
+            obj["y"] = t.y;
+            obj["width"] = t.width;
+            obj["height"] = t.height;
+            fout["tracked_objects"].push_back(obj);
+        }
         out_json.push_back(fout);
     }
 
     /* -------------- summary image ---------------------------------------- */
-    cv::Mat summary = tracker.visualize(last_tracked, -1);
+    cv::Mat summary = tracker.visualize(last_tracked, -1, W, H);
     cv::imwrite(vis_dir + "/summary.png", summary);
 
+    // Write the JSON output to a file
     std::ofstream ofs(out_path);
-    ofs << out_json.dump(2);
+    ofs << out_json.dump(2); // pretty print with indentation of 2 spaces
     std::cout << "Wrote " << frames.size()
               << " frames + summary to " << vis_dir << '\n';
     return 0;

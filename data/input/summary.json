@@ -1,0 +1,77 @@
+[
+  {
+    "frame_id": 0,
+    "timestamp": "2025-06-19T12:00:00Z",
+    "detections": [
+      {
+        "x": 0.5,
+        "y": 0.3,
+        "width": 0.04,
+        "height": 0.04
+      }
+    ]
+  },
+  {
+    "frame_id": 1,
+    "timestamp": "2025-06-19T12:00:01Z",
+    "detections": [
+      {
+        "x": 0.5,
+        "y": 0.32,
+        "width": 0.04,
+        "height": 0.04
+      }
+    ]
+  },
+  {
+    "frame_id": 2,
+    "timestamp": "2025-06-19T12:00:02Z",
+    "detections": []
+  },
+  {
+    "frame_id": 3,
+    "timestamp": "2025-06-19T12:00:03Z",
+    "detections": []
+  },
+  {
+    "frame_id": 4,
+    "timestamp": "2025-06-19T12:00:04Z",
+    "detections": []
+  },
+  {
+    "frame_id": 5,
+    "timestamp": "2025-06-19T12:00:05Z",
+    "detections": [
+      {
+        "x": 0.5,
+        "y": 0.4,
+        "width": 0.04,
+        "height": 0.04
+      }
+    ]
+  },
+  {
+    "frame_id": 6,
+    "timestamp": "2025-06-19T12:00:06Z",
+    "detections": [
+      {
+        "x": 0.5,
+        "y": 0.42,
+        "width": 0.04,
+        "height": 0.04
+      }
+    ]
+  },
+  {
+    "frame_id": 7,
+    "timestamp": "2025-06-19T12:00:07Z",
+    "detections": [
+      {
+        "x": 0.5,
+        "y": 0.44,
+        "width": 0.04,
+        "height": 0.04
+      }
+    ]
+  }
+]
