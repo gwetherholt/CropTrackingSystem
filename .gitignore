@@ -4,8 +4,6 @@ build/
 *.vcxproj*
 /stage/
 
-# visualisations & outputs
-data/output/
 
 # CMake files
 CMakeFiles/
