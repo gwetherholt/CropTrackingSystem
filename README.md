@@ -80,7 +80,6 @@ run_all_examples.bat
 | **overlapping.json** | 8 | 2 | Heavy IoU overlap | No ID swap |
 | **many_objects_100.json** | 10 | **100** | Density / perf stress | < 15 ms per frame |
 | **long_200_frames.json** | 200 | 5‑8 | Runtime & memory stability | No leak / drift |
-| **pixel_coords.json** | 5 | 3 | *Pixel* coords input | Output in 0‑1 range |
 | **frame_0001.json** / `0002` | 1 ea. | 2 | Numbers as *strings* (YOLO) | Parser robustness |
 
 > Outputs land in `data/output/<dataset>/…`.
