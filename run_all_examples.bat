@@ -9,7 +9,7 @@ for %%F in (data\input\*.json) do (
     rem --- strip extension for folder name ---
     set "BASE=%%~nF"
 
-    echo Running !FILE! …
+    echo Running !FILE! ...
 
     docker run --rm -v "%cd%":/project tracking-solution ^
       --input  /project/!FILE! ^

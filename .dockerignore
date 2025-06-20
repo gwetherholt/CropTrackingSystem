@@ -1,5 +1,5 @@
-# ignore local build artefacts & outputs
-build/
-visualization/
+
+# GOOD  – keep all code, just ignore the usual junk
+/build
+*.o
 *.png
-.git
